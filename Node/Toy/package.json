@@ -1,0 +1,16 @@
+{
+  "name": "toy",
+  "version": "1.0.0",
+  "description": "Toy sample for using botframework with luis intents",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Jason Ioffe",
+  "license": "MIT",
+  "dependencies": {
+    "botbuilder": "^3.14.0",
+    "dotenv-extended": "^2.0.1",
+    "restify": "^6.3.4"
+  }
+}
