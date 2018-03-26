@@ -24,9 +24,10 @@ namespace BIADTemplate.Dialogs
 
         [LuisIntent("")]
         [LuisIntent("None")]
-        public async Task NoneIntent(IDialogContext context, LuisResult result)
+        public Task NoneIntent(IDialogContext context, LuisResult result)
         {
             context.Done("none");
+            return Task.CompletedTask;
         }
     }
 }

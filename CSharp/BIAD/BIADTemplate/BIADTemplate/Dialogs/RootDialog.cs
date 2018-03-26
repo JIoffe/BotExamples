@@ -27,5 +27,12 @@ namespace BIADTemplate.Dialogs
 
             context.Wait(MessageReceivedAsync);
         }
+
+        private Task ResumeAfter_Qna(IDialogContext context, IAwaitable<object> result)
+        {
+            context.Wait(MessageReceivedAsync);
+            return Task.CompletedTask;
+        }
+
     }
 }
