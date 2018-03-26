@@ -5,7 +5,6 @@ using Microsoft.Bot.Connector;
 
 namespace BIADTemplate.Dialogs
 {
-    //All dialogs used in Bot Framework must be marked as serializable so the conversation state can be maintained
     [Serializable]
     public class RootDialog : IDialog<object>
     {

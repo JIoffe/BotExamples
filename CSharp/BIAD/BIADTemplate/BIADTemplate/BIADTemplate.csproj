@@ -130,10 +130,18 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Dialogs\LuisQueryDialog.cs" />
+    <Compile Include="Dialogs\PizzaOrderDialog.cs" />
+    <Compile Include="Dialogs\Prompts\PieSizePrompt.cs" />
+    <Compile Include="Dialogs\Prompts\PizzaToppingPrompt.cs" />
+    <Compile Include="Dialogs\QnaDialog.cs" />
     <Compile Include="Dialogs\RootDialog.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Model\PizzaOrder.cs" />
+    <Compile Include="Model\RichQnaButton.cs" />
+    <Compile Include="Model\RichQnaResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
