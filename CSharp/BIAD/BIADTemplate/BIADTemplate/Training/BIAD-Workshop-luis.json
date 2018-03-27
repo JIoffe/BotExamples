@@ -1,0 +1,158 @@
+{
+  "luis_schema_version": "2.2.0",
+  "versionId": "0.1",
+  "name": "BIAD Workshop",
+  "desc": "A demonstration of LUIS for the Bot in a Day workshop",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "BuyPizza"
+    },
+    {
+      "name": "Greeting"
+    },
+    {
+      "name": "Help"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "Time"
+    }
+  ],
+  "entities": [],
+  "composites": [],
+  "closedLists": [],
+  "regex_entities": [],
+  "bing_entities": [],
+  "model_features": [],
+  "regex_features": [],
+  "utterances": [
+    {
+      "text": "can i buy a pizza",
+      "intent": "BuyPizza",
+      "entities": []
+    },
+    {
+      "text": "can you tell me the time?",
+      "intent": "Time",
+      "entities": []
+    },
+    {
+      "text": "good afternoon",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "good day",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "good morning",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "greetings",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hello",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hello there",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "help",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "help me",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "hey",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "heya",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "howdy",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "i need a pizza pie",
+      "intent": "BuyPizza",
+      "entities": []
+    },
+    {
+      "text": "i want pizza",
+      "intent": "BuyPizza",
+      "entities": []
+    },
+    {
+      "text": "i want to buy a pizza",
+      "intent": "BuyPizza",
+      "entities": []
+    },
+    {
+      "text": "i would like to purchase a pizza",
+      "intent": "BuyPizza",
+      "entities": []
+    },
+    {
+      "text": "please tell me the time",
+      "intent": "Time",
+      "entities": []
+    },
+    {
+      "text": "what can you do",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what can you help me with",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what choices are available",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what time is it now?",
+      "intent": "Time",
+      "entities": []
+    },
+    {
+      "text": "what time is it?",
+      "intent": "Time",
+      "entities": []
+    },
+    {
+      "text": "what's the time?",
+      "intent": "Time",
+      "entities": []
+    }
+  ]
+}
