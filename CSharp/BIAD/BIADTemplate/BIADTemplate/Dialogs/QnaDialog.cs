@@ -8,8 +8,20 @@ namespace BIADTemplate.Dialogs
     public class QnaDialog: QnAMakerDialog
     {
         public QnaDialog() :
-            base(new QnAMakerService(new QnAMakerAttribute(ConfigurationManager.AppSettings["QnaSubscriptionKey"], ConfigurationManager.AppSettings["QnaKnowledgebaseId"], "Sorry, I couldn't find an answer for that", 0.5)))
+            base(GetQnaService())
         {
+        }
+
+        private static IQnAService GetQnaService()
+        {
+            var key = ConfigurationManager.AppSettings["QnaSubscriptionKey"];
+            var kbId = ConfigurationManager.AppSettings["QnaKnowledgebaseId"];
+            var defaultMessage = "Sorry, I couldn't find an answer for that";
+            var scoreThreshold = 0.5D;
+
+
+            var qnaMakerAttribute = new QnAMakerAttribute(key, kbId, defaultMessage, scoreThreshold);
+            return new QnAMakerService(qnaMakerAttribute);
         }
     }
 }

@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using BIADTemplate.Dialogs.Prompts;
 using BIADTemplate.Model;
 using Microsoft.Bot.Builder.Dialogs;
-using Microsoft.Bot.Connector;
 
 namespace BIADTemplate.Dialogs
 {
@@ -12,19 +11,11 @@ namespace BIADTemplate.Dialogs
     {
         private PizzaOrder _order;
 
-        public Task StartAsync(IDialogContext context)
+        public async Task StartAsync(IDialogContext context)
         {
             _order = new PizzaOrder();
 
-            context.Wait(MessageReceivedAsync);
-            return Task.CompletedTask;
-        }
-
-        private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<object> result)
-        {
-            var activity = await result as IMessageActivity;
             await context.PostAsync("ok let me get your order...");
-
             PromptDialog.Text(context, ResumeAfter_AddressPrompt, "What is the address?");
         }
 

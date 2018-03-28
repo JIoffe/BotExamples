@@ -19,7 +19,7 @@ namespace BIADTemplate.Dialogs
         private static readonly double SCORE_TRESHOLD = 0.8;
 
         public RichQnaDialog()
-            : base(new QnAMakerService(new QnAMakerAttribute(ConfigurationManager.AppSettings["QnaSubscriptionKey"], ConfigurationManager.AppSettings["QnaKnowledgebaseId"])))
+            : base(GetQnaService())
 
         {
 
@@ -50,7 +50,11 @@ namespace BIADTemplate.Dialogs
             return new HeroCard
             {
                 Text = "Did you mean one of these?",
-                Buttons = result.Answers.Select(a => new CardAction(ActionTypes.PostBack, title: a.Questions.First(), value: a.Questions.First())).ToList()
+                Buttons = result.Answers.Select(a => new CardAction{
+                    Type = ActionTypes.PostBack,
+                    Title = a.Questions.First(),
+                    Value = a.Questions.First()
+                }).ToList()
             }
             .ToAttachment();
         }
@@ -74,20 +78,13 @@ namespace BIADTemplate.Dialogs
             }
             .ToAttachment();
         }
-        public Task StartAsync(IDialogContext context)
+        private static IQnAService GetQnaService()
         {
-            context.Wait(MessageReceivedAsync);
+            var key = ConfigurationManager.AppSettings["QnaSubscriptionKey"];
+            var kbId = ConfigurationManager.AppSettings["QnaKnowledgebaseId"];
 
-            return Task.CompletedTask;
-        }
-
-        private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<object> result)
-        {
-            var activity = await result as IMessageActivity;
-
-            // TODO: Put logic for handling user message here
-
-            context.Wait(MessageReceivedAsync);
+            var qnaMakerAttribute = new QnAMakerAttribute(key, kbId);
+            return new QnAMakerService(qnaMakerAttribute);
         }
     }
 }

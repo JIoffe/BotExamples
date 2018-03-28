@@ -1,27 +1,23 @@
 ﻿using BIADTemplate.Model;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Builder.FormFlow;
-using Microsoft.Bot.Connector;
 using System;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace BIADTemplate.Dialogs
 {
     [Serializable]
-    public class ProfileFormDialog: IDialog<object>
+    public class ProfileFormDialog: IDialog<string>
     {
         public Task StartAsync(IDialogContext context)
         {
-            context.Wait(MessageReceivedAsync);
+            //Adding "prompt in start" causes our form to prompt right away without waiting for user input
+            var form = FormDialog.FromForm(BuildProfileForm, FormOptions.PromptInStart);
+            context.Call(form, ResumeAfter_ProfileForm);
+
             return Task.CompletedTask;
         }
 
-        private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<object> result)
-        {
-            var activity = await result as IMessageActivity;
-            await context.Forward(FormDialog.FromForm(BuildProfileForm), ResumeAfter_ProfileForm, activity, CancellationToken.None);
-        }
 
         private async Task ResumeAfter_ProfileForm(IDialogContext context, IAwaitable<Profile> result)
         {
@@ -31,6 +27,7 @@ namespace BIADTemplate.Dialogs
         }
         private static IForm<Profile> BuildProfileForm()
         {
+            //FormBuilder greater streamlines waterfall-like functionality
             return new FormBuilder<Profile>()
                 .Field(nameof(Profile.FirstName), "What's your first name?")
                 .Field(nameof(Profile.LastName), "Great, and your last name?")

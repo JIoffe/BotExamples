@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
@@ -18,7 +17,7 @@ namespace BIADTemplate.Dialogs
 
         private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<object> result)
         {
-            var activity = await result as Activity;
+            var activity = await result as IMessageActivity;
 
             // calculate something for us to return
             int length = (activity.Text ?? string.Empty).Length;
@@ -27,6 +26,15 @@ namespace BIADTemplate.Dialogs
             await context.PostAsync($"You sent {activity.Text} which was {length} characters");
 
             context.Wait(MessageReceivedAsync);
+        }
+
+        /// <summary>
+        /// A callback for when a child flow is complete
+        /// </summary>
+        private Task ResumeAfter_ChildFlow(IDialogContext context, IAwaitable<string> result)
+        {
+            context.Wait(MessageReceivedAsync);
+            return Task.CompletedTask;
         }
 
         /// <summary>
@@ -41,17 +49,10 @@ namespace BIADTemplate.Dialogs
         /// <summary>
         /// A callback for when a LUIS query is complete. It will defer to QNA if LUIS does not match to a handler
         /// </summary>
-        private async Task ResumeAfter_Luis(IDialogContext context, IAwaitable<object> result)
+        private Task ResumeAfter_Luis(IDialogContext context, IAwaitable<object> result)
         {
-            var activity = await result as IMessageActivity;
-
-            if(activity != null)
-            {
-                await context.Forward(new RichQnaDialog(), ResumeAfter_Qna, activity, CancellationToken.None);
-                return;
-            }
-
             context.Wait(MessageReceivedAsync);
+            return Task.CompletedTask;
         }
     }
 }
