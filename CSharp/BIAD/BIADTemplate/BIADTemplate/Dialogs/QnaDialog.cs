@@ -1,4 +1,5 @@
-﻿using Microsoft.Bot.Builder.CognitiveServices.QnAMaker;
+﻿using BIADTemplate.Services;
+using Microsoft.Bot.Builder.CognitiveServices.QnAMaker;
 using System;
 using System.Configuration;
 
@@ -16,12 +17,12 @@ namespace BIADTemplate.Dialogs
         {
             var key = ConfigurationManager.AppSettings["QnaSubscriptionKey"];
             var kbId = ConfigurationManager.AppSettings["QnaKnowledgebaseId"];
+            var qnAHost = ConfigurationManager.AppSettings["QnaHost"];
             var defaultMessage = "Sorry, I couldn't find an answer for that";
             var scoreThreshold = 0.5D;
 
-
             var qnaMakerAttribute = new QnAMakerAttribute(key, kbId, defaultMessage, scoreThreshold);
-            return new QnAMakerService(qnaMakerAttribute);
+            return new CustomQnAService(qnaMakerAttribute, qnAHost);
         }
     }
 }

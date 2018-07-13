@@ -136,6 +136,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Dialogs\EchoDialog.cs" />
     <Compile Include="Dialogs\LuisQueryDialog.cs" />
     <Compile Include="Dialogs\PizzaOrderDialog.cs" />
     <Compile Include="Dialogs\ProfileFormDialog.cs" />
@@ -152,12 +153,12 @@
     <Compile Include="Model\RichQnaButton.cs" />
     <Compile Include="Model\RichQnaResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CustomQnAService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Training\richqna.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -184,7 +185,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>3979</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:3979/</IISUrl>
+          <IISUrl>http://localhost:5000/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

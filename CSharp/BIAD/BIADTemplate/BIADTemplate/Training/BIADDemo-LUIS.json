@@ -1,0 +1,228 @@
+{
+  "luis_schema_version": "3.0.0",
+  "versionId": "0.1",
+  "name": "BIADDemo",
+  "desc": "Demo for BOT IN A DAY workshop",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "Buy"
+    },
+    {
+      "name": "GetTime"
+    },
+    {
+      "name": "Greeting"
+    },
+    {
+      "name": "LogProfile"
+    },
+    {
+      "name": "None"
+    }
+  ],
+  "entities": [
+    {
+      "name": "Product",
+      "roles": []
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "prebuiltEntities": [],
+  "model_features": [],
+  "regex_features": [],
+  "patterns": [],
+  "utterances": [
+    {
+      "text": "buy pizza",
+      "intent": "Buy",
+      "entities": [
+        {
+          "entity": "Product",
+          "startPos": 4,
+          "endPos": 8
+        }
+      ]
+    },
+    {
+      "text": "can you help me buy a car",
+      "intent": "Buy",
+      "entities": [
+        {
+          "entity": "Product",
+          "startPos": 22,
+          "endPos": 24
+        }
+      ]
+    },
+    {
+      "text": "can you record my profile",
+      "intent": "LogProfile",
+      "entities": []
+    },
+    {
+      "text": "can you tell me what the time is?",
+      "intent": "GetTime",
+      "entities": []
+    },
+    {
+      "text": "can you update my profile",
+      "intent": "LogProfile",
+      "entities": []
+    },
+    {
+      "text": "good day",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "good evening",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "good morning",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hello",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hello there",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hey",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "heya",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "howdy",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "i need a hat",
+      "intent": "Buy",
+      "entities": [
+        {
+          "entity": "Product",
+          "startPos": 9,
+          "endPos": 11
+        }
+      ]
+    },
+    {
+      "text": "i need to update my profile",
+      "intent": "LogProfile",
+      "entities": []
+    },
+    {
+      "text": "i want a cheeseburger",
+      "intent": "Buy",
+      "entities": [
+        {
+          "entity": "Product",
+          "startPos": 9,
+          "endPos": 20
+        }
+      ]
+    },
+    {
+      "text": "i'd like to buy a porcupine",
+      "intent": "Buy",
+      "entities": [
+        {
+          "entity": "Product",
+          "startPos": 18,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "i'd like to record my profile",
+      "intent": "LogProfile",
+      "entities": []
+    },
+    {
+      "text": "i'm looking to purchase a house",
+      "intent": "Buy",
+      "entities": [
+        {
+          "entity": "Product",
+          "startPos": 26,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "my profile is updated",
+      "intent": "LogProfile",
+      "entities": []
+    },
+    {
+      "text": "need help buying pizza",
+      "intent": "Buy",
+      "entities": [
+        {
+          "entity": "Product",
+          "startPos": 17,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "need help purchasing a dog",
+      "intent": "Buy",
+      "entities": [
+        {
+          "entity": "Product",
+          "startPos": 23,
+          "endPos": 25
+        }
+      ]
+    },
+    {
+      "text": "profile",
+      "intent": "LogProfile",
+      "entities": []
+    },
+    {
+      "text": "what is the current time",
+      "intent": "GetTime",
+      "entities": []
+    },
+    {
+      "text": "what time is it?",
+      "intent": "GetTime",
+      "entities": []
+    },
+    {
+      "text": "what time is not now?",
+      "intent": "GetTime",
+      "entities": []
+    },
+    {
+      "text": "what's the current time?",
+      "intent": "GetTime",
+      "entities": []
+    }
+  ]
+}

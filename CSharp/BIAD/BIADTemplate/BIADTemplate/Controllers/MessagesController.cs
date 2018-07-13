@@ -7,6 +7,9 @@ using Microsoft.Bot.Connector;
 
 namespace BIADTemplate
 {
+    //This attribute is handled by the Bot Builder V3 library.
+    //It will automatically authenticate communciation to your bot
+    //against the App Id and Password credentials setup in Azure portal
     [BotAuthentication]
     public class MessagesController : ApiController
     {
@@ -18,7 +21,10 @@ namespace BIADTemplate
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
+                //This static method will route the activity to the appropriate point
+                //in the conversation stack. It takes a factory method to produce the first point in the stack
+                //which will usually be a "root" conversation state
+                await Conversation.SendAsync(activity, () => new Dialogs.EchoDialog());
             }
             else
             {
