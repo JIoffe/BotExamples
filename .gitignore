@@ -261,4 +261,4 @@ __pycache__/
 *.pyc
 
 # Publishing profiles
-Properties/PublishProfiles/
+PublishProfiles/
