@@ -1,0 +1,23 @@
+{
+  "name": "BIADBot",
+  "services": [
+    {
+      "type": "endpoint",
+      "name": "development",
+      "endpoint": "http://localhost:5000/api/messages",
+      "appId": "",
+      "appPassword": "",
+      "id": "1"
+    },
+    {
+      "type": "qna",
+      "name": "qna",
+      "KbId": "YOUR KNOWLEDGE BASE ID",
+      "Hostname": "YOUR ENDPOINT / HOSTNAME",
+      "EndpointKey": "YOUR ENDPOINT KEY",
+      "id": "117"
+    }
+  ],
+  "padlock": "",
+  "version": "1.0"
+}

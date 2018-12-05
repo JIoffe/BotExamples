@@ -1,0 +1,356 @@
+{
+  "luis_schema_version": "3.1.0",
+  "versionId": "0.1",
+  "name": "PizzaBot",
+  "desc": "Created for the Bot in a Day Workshop",
+  "culture": "en-us",
+  "intents": [
+    {
+      "name": "Greeting"
+    },
+    {
+      "name": "Help"
+    },
+    {
+      "name": "None"
+    },
+    {
+      "name": "OrderPizza"
+    }
+  ],
+  "entities": [
+    {
+      "name": "Size",
+      "roles": []
+    },
+    {
+      "name": "Topping",
+      "roles": []
+    }
+  ],
+  "composites": [],
+  "closedLists": [],
+  "patternAnyEntities": [],
+  "regex_entities": [],
+  "prebuiltEntities": [],
+  "model_features": [],
+  "regex_features": [],
+  "patterns": [],
+  "utterances": [
+    {
+      "text": "buy a pizza",
+      "intent": "OrderPizza",
+      "entities": []
+    },
+    {
+      "text": "can i get a small pie",
+      "intent": "OrderPizza",
+      "entities": [
+        {
+          "entity": "Size",
+          "startPos": 12,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "can i order a mushroom pizza",
+      "intent": "OrderPizza",
+      "entities": [
+        {
+          "entity": "Topping",
+          "startPos": 14,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "can i order a pizza",
+      "intent": "OrderPizza",
+      "entities": []
+    },
+    {
+      "text": "can you help me buy a pizza",
+      "intent": "OrderPizza",
+      "entities": []
+    },
+    {
+      "text": "get me a large pepperoni pie",
+      "intent": "OrderPizza",
+      "entities": [
+        {
+          "entity": "Size",
+          "startPos": 9,
+          "endPos": 13
+        },
+        {
+          "entity": "Topping",
+          "startPos": 15,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "give me a chicken pizza",
+      "intent": "OrderPizza",
+      "entities": [
+        {
+          "entity": "Topping",
+          "startPos": 10,
+          "endPos": 16
+        }
+      ]
+    },
+    {
+      "text": "give me a medium pepperoni pie with sausage",
+      "intent": "OrderPizza",
+      "entities": [
+        {
+          "entity": "Size",
+          "startPos": 10,
+          "endPos": 15
+        },
+        {
+          "entity": "Topping",
+          "startPos": 17,
+          "endPos": 25
+        },
+        {
+          "entity": "Topping",
+          "startPos": 36,
+          "endPos": 42
+        }
+      ]
+    },
+    {
+      "text": "good evening",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "good morning",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hello",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "help",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "help me!",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "hey",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hey there",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hiya",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "how do i use this",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "howdy",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "i need a small pie with sausage",
+      "intent": "OrderPizza",
+      "entities": [
+        {
+          "entity": "Size",
+          "startPos": 9,
+          "endPos": 13
+        },
+        {
+          "entity": "Topping",
+          "startPos": 24,
+          "endPos": 30
+        }
+      ]
+    },
+    {
+      "text": "i want a pepperoni pie",
+      "intent": "OrderPizza",
+      "entities": [
+        {
+          "entity": "Topping",
+          "startPos": 9,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "i want a pizza",
+      "intent": "OrderPizza",
+      "entities": []
+    },
+    {
+      "text": "i would like an anchovy pizza",
+      "intent": "OrderPizza",
+      "entities": [
+        {
+          "entity": "Topping",
+          "startPos": 16,
+          "endPos": 22
+        }
+      ]
+    },
+    {
+      "text": "i would like to place an order",
+      "intent": "OrderPizza",
+      "entities": []
+    },
+    {
+      "text": "i'd like a pepperoni pizza",
+      "intent": "OrderPizza",
+      "entities": [
+        {
+          "entity": "Topping",
+          "startPos": 11,
+          "endPos": 19
+        }
+      ]
+    },
+    {
+      "text": "i'd like a pie",
+      "intent": "OrderPizza",
+      "entities": []
+    },
+    {
+      "text": "i'd like a pizza with pepperoni and mushrooms",
+      "intent": "OrderPizza",
+      "entities": [
+        {
+          "entity": "Topping",
+          "startPos": 22,
+          "endPos": 30
+        },
+        {
+          "entity": "Topping",
+          "startPos": 36,
+          "endPos": 44
+        }
+      ]
+    },
+    {
+      "text": "i'd like a sausage pizza",
+      "intent": "OrderPizza",
+      "entities": [
+        {
+          "entity": "Topping",
+          "startPos": 11,
+          "endPos": 17
+        }
+      ]
+    },
+    {
+      "text": "large pie with pepperoni, sausage and mushrooms",
+      "intent": "OrderPizza",
+      "entities": [
+        {
+          "entity": "Size",
+          "startPos": 0,
+          "endPos": 4
+        },
+        {
+          "entity": "Topping",
+          "startPos": 15,
+          "endPos": 23
+        },
+        {
+          "entity": "Topping",
+          "startPos": 26,
+          "endPos": 32
+        },
+        {
+          "entity": "Topping",
+          "startPos": 38,
+          "endPos": 46
+        }
+      ]
+    },
+    {
+      "text": "make an order",
+      "intent": "OrderPizza",
+      "entities": []
+    },
+    {
+      "text": "order a small mushroom pie",
+      "intent": "OrderPizza",
+      "entities": [
+        {
+          "entity": "Size",
+          "startPos": 8,
+          "endPos": 12
+        },
+        {
+          "entity": "Topping",
+          "startPos": 14,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "order pizza",
+      "intent": "OrderPizza",
+      "entities": []
+    },
+    {
+      "text": "small pie with anchovies",
+      "intent": "OrderPizza",
+      "entities": [
+        {
+          "entity": "Size",
+          "startPos": 0,
+          "endPos": 4
+        },
+        {
+          "entity": "Topping",
+          "startPos": 15,
+          "endPos": 23
+        }
+      ]
+    },
+    {
+      "text": "what can you do",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what can you help me with",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "what should i do",
+      "intent": "Help",
+      "entities": []
+    }
+  ],
+  "settings": []
+}
